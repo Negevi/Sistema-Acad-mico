@@ -3,10 +3,9 @@
 
 #include "pessoa.h"
 
-Mdy::Mdy(int fdia, int fmes, int fano) {
-    mes = fmes;
-    dia = fdia;
-    ano = fano;
+Mdy::Mdy(int fdia, int fmes, int fano):
+    dia(fdia), mes(fmes), ano(fano) {
+
 }
 
 Mdy::~Mdy() {}
@@ -20,7 +19,10 @@ void Mdy::mdyAtual() {
     ano = agora_mdy->tm_year + 1900;
 }
 
-Pessoa::Pessoa(Mdy nasc, char* nome, int idade, int id) {}
+Pessoa::Pessoa(Mdy nasc, char* nome, int idade, int id): 
+    nascimento(nasc), idade(idade), id(id) {
+    std::strcpy(this->nome, nome);
+}
 
 Pessoa::~Pessoa() {}
 
@@ -30,7 +32,7 @@ void Pessoa::setNome(char* n) {
 
 void Pessoa::calcularIdade(Mdy atual) {
     idade = atual.getAno() - nascimento.getAno();
-
+ 
     if (atual.getMes() < nascimento.getMes() || 
        (atual.getMes() == nascimento.getMes() && atual.getDia() < nascimento.getDia())) {
         idade--;

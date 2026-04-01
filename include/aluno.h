@@ -7,7 +7,7 @@ class Aluno : public Pessoa {
     private:
         int ra;
     public:
-        Aluno(Pessoa::Mdy mdy, char* nome, int idade, int id, int ra);
+        Aluno(Mdy mdy, char* nome, int idade, int id, int ra);
         ~Aluno();
         void setRa(int novoRa) { ra = novoRa; };
         int getRa() { return ra; };

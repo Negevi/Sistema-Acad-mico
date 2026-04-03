@@ -18,4 +18,3 @@ $(BUILD)/%.o: $(SRC)/%.cpp
 clean:
 	rm -f $(BUILD)/*.o $(TARGET)
 
-# gpt slop. Eu entendi 50% e fiquei cm preguica

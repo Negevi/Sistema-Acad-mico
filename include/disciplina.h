@@ -1,4 +1,5 @@
 class Departamento;
+class Aluno;
 
 class Disciplina {
     private:
@@ -6,10 +7,11 @@ class Disciplina {
         char nome[30];
         char area_do_conhecimento[50];
         Departamento* pDpto;
+        Aluno* alunos[45];
     public:
         Disciplina* pProx;
         Disciplina(int id, char* nome, char* ac, 
-            Departamento* pDpto = nullptr, Disciplina* pProx = nullptr);
+            Departamento* pDpto = nullptr, Disciplina* pProx = nullptr, Aluno* alunos = nullptr);
         ~Disciplina();
         Departamento* getDpto() { return pDpto; };
         int getId() { return id; };

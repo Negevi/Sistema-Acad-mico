@@ -5,7 +5,6 @@
 
 Mdy::Mdy(int fdia, int fmes, int fano):
     dia(fdia), mes(fmes), ano(fano) {
-
 }
 
 Mdy::~Mdy() {}

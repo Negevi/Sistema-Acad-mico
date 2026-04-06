@@ -6,12 +6,21 @@ class Disciplina {
         int id;
         char nome[30];
         char area_do_conhecimento[50];
+
+        int n_alunos;
+        int lim_alunos;
+
         Departamento* pDpto;
-        Aluno* alunos[45];
+
+        Aluno* pAlunoPrim;
+        Aluno* pAlunoAtual;
     public:
-        Disciplina* pProx;
-        Disciplina(int id, char* nome, char* ac, 
-            Departamento* pDpto = nullptr, Disciplina* pProx = nullptr, Aluno* alunos = nullptr);
+        Disciplina* pDisciplinaProx;
+        Disciplina* pDisciplinaAnte;
+        
+        Disciplina(int id, char* nome, char* ac, Departamento* pDpto, 
+        Disciplina* pDisciplinaAnte, Disciplina* pDisciplinaProx,
+        Aluno* pAlunoProx, Aluno* pAlunoAnte, int n_alunos = 0, int lim_alunos = 45);
         ~Disciplina();
         Departamento* getDpto() { return pDpto; };
         int getId() { return id; };
@@ -19,4 +28,6 @@ class Disciplina {
         void setDpto(Departamento* ponteiro) { pDpto = ponteiro; };
         void setId(int i) { id = i; };
         void setNome(char* n);
+        void incluaAluno(Aluno* aluno);
+        void listeAlunos();
 };

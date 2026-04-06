@@ -16,22 +16,8 @@ void Departamento::setNome(char* n) {
 }
 
 void Departamento::incluirDisciplina(Disciplina* include) {
-    Disciplina* aux;
-    include->setDpto(this);
-    if(pDisciplPrim == nullptr) {
-        pDiscAtual = include;
-        pDisciplPrim = include;
-    } else {
-        aux = pDiscAtual;
-        aux->pProx = include;
-        pDiscAtual = include;
-    }
+    
 }
 
 void Departamento::listarDisciplinas () {
-    Disciplina* aux = pDisciplPrim;
-    while(aux != nullptr) {
-        std::cout << aux->getNome() << std::endl;
-        aux = aux->pProx;
-    }
 }
